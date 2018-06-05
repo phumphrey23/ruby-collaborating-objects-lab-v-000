@@ -6,7 +6,8 @@ class MP3Importer
   end
 
   def files
-    Dir[@path+"/*.mp3"].map { |file| file.split("/").last }
+    @files ||= Dir.entries(@path).select {|song| !File.directory?(song) && song.end_with?(".mp3")}
+    #Dir[@path+"/*.mp3"].map { |file| file.split("/").last }
   end
 
   def import
