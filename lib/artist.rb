@@ -40,7 +40,7 @@ class Artist
 #        return self.new(name)
 #      end
 #    end
-#  end
+  end
 
   def print_songs
     @songs.each do |song|
